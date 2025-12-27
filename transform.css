@@ -61,6 +61,8 @@
 .b7 {
   grid-column: span 1;
   background: #171717;
+  position: relative;
+  overflow: hidden;
 }
 
 /* третья строка */
@@ -634,7 +636,22 @@
 
 
 
+/* БЛОК 7 — СТАТИКА */
 
+.b7-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: auto;
+
+  min-height: 100%;
+  object-fit: cover;
+
+  /* чтобы SVG не схлопывался */
+  display: block;
+}
 
 
 
