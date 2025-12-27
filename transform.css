@@ -640,21 +640,35 @@
 
 /* БЛОК 7 — СТАТИКА */
 
-.b7-image {
+.b7-img {
   position: absolute;
   left: 0;
   bottom: 0;
 
   width: 100%;
   height: auto;
-
   min-height: 100%;
-  object-fit: cover;
 
-  /* чтобы SVG не схлопывался */
-  display: block;
+  object-fit: cover;
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
 }
 
+.b7-img--dark {
+  opacity: 1;
+}
+
+.b7-img--light {
+  opacity: 0;
+}
+.b7:hover .b7-img--dark {
+  opacity: 0;
+}
+
+.b7:hover .b7-img--light {
+  opacity: 1;
+}
 
 
 
