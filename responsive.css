@@ -50,6 +50,12 @@
       aspect-ratio: 2.2 / 1 ;
       background-color: white;
     }
+  .node {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 3cqw; /* % от ширины canvas */
+  line-height: 1;
+  }
 }
 
 /* iPhone Portrait */

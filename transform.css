@@ -360,13 +360,15 @@
   border-radius: 50%;
 
   background-color: #eef1f4;
+  display: flex;
 
   align-items: center;
   justify-content: center;
 
   font-family: Inter, sans-serif;
-  font-size: 22px;
   font-weight: 600;
+  font-size: 2cqw; /* % от ширины canvas */
+  line-height: 1;
 }
 
 .node.start {
