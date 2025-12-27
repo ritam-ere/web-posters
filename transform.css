@@ -736,7 +736,7 @@
 .item-01 .arrow {
   width: 38%;
   left: -40%;
-  top: -16%;
+  top: 8%;
   transform: rotate(0deg);
 }
 
@@ -750,7 +750,7 @@
 .item-02 .arrow {
   width: 38%;
   left: -35%;
-  top: 1%;
+  top: 25%;
   transform: rotate(150deg);
 }
 
@@ -764,7 +764,7 @@
 .item-03 .arrow {
   width: 32%;
   right: -29%;
-  top: 1%;
+  top: 25%;
   transform: rotate(0deg);
 }
 
@@ -778,7 +778,7 @@
 .item-04 .arrow {
   width: 33%;
   left: -38%;
-  top: -15%;
+  top: 8%;
   transform: rotate(180deg);
 }
 
@@ -792,7 +792,7 @@
 .item-05 .arrow {
   width: 38%;
   left: -40%;
-  top: -16%;
+  top: 8%;
   transform: rotate(0deg);
 }
 
@@ -806,7 +806,7 @@
 .item-06 .arrow {
   width: 40%;
   right: -32%;
-  top: -38%;
+  top: -10%;
   transform: rotate(-45deg);
 }
 
@@ -820,7 +820,7 @@
 .item-07 .arrow {
   width: 30%;
   right: -30%;
-  top: -16%;
+  top: 8%;
   transform: rotate(0deg);
 }
 
@@ -834,7 +834,7 @@
 .item-08 .arrow {
   width: 55%;
   right: -50%;
-  top: -16%;
+  top: 8%;
   transform: rotate(0deg);
 }
 
