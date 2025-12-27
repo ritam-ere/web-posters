@@ -881,26 +881,25 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-}
+  white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
 
-.marquee-track {
   display: flex;
-  align-items: center;
-  gap: 40px;
-
-  width: max-content;
-  will-change: transform;
-
-  animation: marquee 14s linear infinite;
+  align-items: center; 
 }
-
-.arrow {
-  height: 64px;
-  width: auto;
-  flex-shrink: 0;
+.marquee span {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #eef1f4;
+  margin-right: 48px;
 }
-.arrow {
-  height: clamp(40px, 6vw, 72px);
+.marquee-track {
+  display: inline-flex;
+  align-items: center;    
+  animation: marquee 18s linear infinite;
+  line-height: 3.8;
 }
 @keyframes marquee {
   from {
@@ -910,6 +909,8 @@
     transform: translateX(-50%);
   }
 }
+
+
 
 
 
