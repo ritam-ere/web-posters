@@ -1,0 +1,1044 @@
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('BricolageGrotesque-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* первая строка */
+.b1 {
+  background: #ffffff;
+  grid-column: span 1;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b2 {
+  background: #1a1a1a;
+  grid-column: span 1;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b3 {
+  background: #eef1f4;
+  grid-column: span 1;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b4 {
+  background: #ffffff;
+  grid-column: span 1;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* вторая строка */
+.b5 {
+  background: #eef1f4;
+  grid-column: span 1;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.b6 {
+  grid-column: span 2;
+  aspect-ratio: 1 / 1;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.b7 {
+  grid-column: span 1;
+  background: #171717;
+}
+
+/* третья строка */
+.b8 {
+  background: #000000;
+  grid-column: span 1;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.b9 {
+  background: #eef1f4;
+  grid-column: span 2;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.b10 {
+  background: #000000;
+  grid-column: span 1;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* нижние блоки */
+.b11 {
+  background: #171717;
+  grid-column: span 4;
+  height: 120px;
+}
+
+.b12 {
+  background: #000000;
+  grid-column: span 4;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b13 {
+  background: #171717;
+  color: #ffffff;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  grid-column: span 4;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+/* БЛОК 1/2/4 — БУКВЫ */
+.lettering {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;  
+  object-position: center;
+
+  transform: none;      
+}
+
+.lettering-wrap {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible; /* хвосты могут выходить */
+}
+
+.lettering.right {
+  object-position: 30% 40%;
+}
+.b1 .lettering-wrap {
+  transform: scale(1.12);
+  transform-origin: center;
+}
+.b2 .lettering-wrap {
+  transform: scale(1.38) translateY(-6%) translateX(6%);
+  transform-origin: center;
+}
+
+.b4 .lettering-wrap.com {
+  transform: scale(0.78);   
+  transform-origin: center;
+}
+
+
+
+/* БЛОК 3 — DVD МЯЧИК */
+.dvd-box {
+  position: absolute;
+  inset: 0;
+}
+
+.dvd-ball {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+
+  display: flex;
+  align-items:center;
+  justify-content: center;
+
+  animation:
+    moveX 4s linear infinite alternate,
+    moveY 3s linear infinite alternate;
+}
+
+.dvd-text {
+  inset: 0;
+  color: white;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+@keyframes moveX {
+  from { left: 0; }
+  to { left: calc(100% - 110px); }
+}
+
+@keyframes moveY {
+  from { top: 0; }
+  to { top: calc(100% - 110px); }
+}
+
+
+
+
+
+/* БЛОК 5 — ПАДАЮЩИЕ ПРЯМОУГИ */
+
+.label {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.label.offset {
+  margin-left: 16px;
+}
+
+.b5-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.b5-bottom {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 2;
+}
+
+.b5-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fall {
+  position: absolute;
+  top: -200px;
+
+  border-style: solid;
+  border-color: #000;
+  border-width: 4px;
+  border-radius: 6px;
+  background: transparent;
+
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.r1 { left: 5%;  width: 4px;  height: 20px;  animation-duration: 6s; animation-delay: -1s; }
+.r2 { left: 12%; width: 10px; height: 140px; animation-duration: 9s; animation-delay: -4s; }
+.r3 { left: 18%; width: 6px;  height: 110px; animation-duration: 7s; animation-delay: -2.5s; }
+.r4 { left: 30%; width: 0.01px; height: 160px; animation-duration: 11s; animation-delay: -6s; }
+.r5 { left: 38%; width: 3px;  height: 90px;  animation-duration: 6.5s; animation-delay: -3s; }
+.r6 { left: 55%; width: 8px;  height: 130px; animation-duration: 10s; animation-delay: -5s; }
+.r7 { left: 62%; width: 0.01px;  height: 100px; animation-duration: 7.5s; animation-delay: -1.5s; }
+.r8 { left: 70%; width: 11px; height: 150px; animation-duration: 12s; animation-delay: -7s; }
+.r9 { left: 82%; width: 0.01px;  height: 120px; animation-duration: 9.5s; animation-delay: -4.5s; }
+.r10{ left: 90%; width: 4px;  height: 40px;  animation-duration: 6s; animation-delay: -2s; }
+.r11 { left: 8%;  width: 2px; height: 20px;  animation-duration: 6s; animation-delay: -1.5s; }
+.r12 { left: 15%; width: 1px; height: 120px; animation-duration: 9s; animation-delay: -3s;}
+.r13 { left: 47%; width: 2px; height: 10px;  animation-duration: 7s;animation-delay: -2.5s; }
+.r14 { left: 66%; width: 1px; height: 140px; animation-duration: 11s; animation-delay: -1s; }
+.r15 { left: 88%; width: 2px; height: 70px;  animation-duration: 6.5s; animation-delay: -1s; }
+.r16 { left: 5%; width: 1px; height: 70px; animation-duration: 6.5s; animation-delay: -3s;}
+.r17 { left: 12%; width: 2px; height: 140px; animation-duration: 10s; animation-delay: -6s;}
+.r18 { left: 19%; width: 1px; height: 90px; animation-duration: 7.5s; animation-delay: -4s;}
+.r19 { left: 27%; width: 2px;height: 120px; animation-duration: 9s; animation-delay: -5.5s;}
+.r20 { left: 34%; width: 1px; height: 20px; animation-duration: 6s; animation-delay: -2s; }
+.r21 { left: 42%; width: 2px; height: 160px; animation-duration: 11s; animation-delay: -7s; }
+.r22 { left: 51%; width: 1px; height: 50px; animation-duration: 8s; animation-delay: -4.5s; }
+.r23 { left: 59%; width: 2px; height: 130px; animation-duration: 9.5s; animation-delay: -6.5s; }
+.r24 { left: 68%; width: 1px; height: 20px; animation-duration: 7s; animation-delay: -3.5s; }
+.r25 { left: 76%; width: 2px; height: 150px; animation-duration: 10.5s; animation-delay: -8s;}
+.r26 { left: 84%; width: 1px; height: 25px; animation-duration: 6.8s; animation-delay: -2.5s; }
+.r27 { left: 92%; width: 2px; height: 110px; animation-duration: 8.5s; animation-delay: -5s; }
+
+
+@keyframes fall {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(120vh);
+  }
+}
+
+
+
+
+
+
+
+
+/*
+.b6-viewport {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  transform-origin: center center;
+  transform: scale(var(--scale));
+}
+
+*/
+
+
+
+
+
+/* БЛОК 6 — ПУТЬ НАСТОЛКИ */
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+} 
+
+/*
+.node-wrap {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+*/
+.node {
+  position: absolute;
+  
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+
+  background-color: #eef1f4;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.node.start {
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 1 / 1;
+  font-size: 28px;
+
+  left: 50%;
+  top: 50%
+}
+
+.node-1 {
+  width: 14%;
+  top: 17%;
+  left: 0%;
+}
+
+
+.node-2 {
+  width: 9%;
+  top: 26%;
+  left: 12%;
+}
+
+.node-3 {
+  width: 9%;
+  top: 29%;
+  left: 20%;
+}
+
+.node-4 {
+  width: 9%;
+  top: 31%;
+  left: 28.5%;
+}
+
+.node-5 {
+  width: 9%;
+  top: 31%;
+  left: 37%;
+  background: transparent;
+  border: 6px solid #eef1f4;
+  color: transparent;
+}
+
+.node-6 {
+  width: 9%;
+  top: 32%;
+  left: 47%;
+}
+.node-7 {
+  width: 9%;
+  top: 30%;
+  left: 55.5%;
+}
+.node-8 {
+  width: 9%;
+  top: 27%;
+  left: 64%;
+}
+.node-9 {
+  width: 9%;
+  top: 21%;
+  left: 70%;
+}
+.node-10 {
+  width: 9%;
+  top: 12.5%;
+  left: 72%;
+}
+.node-11 {
+  width: 9%;
+  top: 5%;
+  left: 68%;
+}
+.node-12 {
+  width: 9%;
+  top: 0%;
+  left: 61%;
+}
+
+.node-13 {
+  width: 9%;
+  top: 0%;
+  left: 52.3%;
+}
+
+.node-14 {
+  width: 9%;
+  top: 2.2%;
+  left: 44.1%;
+}
+
+.node-15 {
+  width: 9%;
+  top: 7.5%;
+  left: 37%;
+}
+
+.node-16 {
+  width: 9%;
+  top: 15%;
+  left: 32.5%;
+}
+.node-17 {
+  width: 9%;
+  top: 23.5%;
+  left: 33%;
+}
+.node-18 {
+  width: 9%;
+  top: 40%;
+  left: 43%;
+}
+
+.node-19 {
+  width: 9%;
+  top: 43.5%;
+  left: 51%;
+}
+
+.node-20 {
+  width: 9%;
+  top: 45%;
+  left: 59.8%;
+}
+.node-21 {
+  width: 9%;
+  top: 46.5%;
+  left: 68.5%;
+}
+
+.node-22 {
+  width: 9%;
+  top: 49.5%;
+  left: 77%;
+}
+
+.node-23 {
+  width: 9%;
+  top: 53%;
+  left: 85%;
+}
+.node-24 {
+  width: 9%;
+  top: 60%;
+  left: 90.5%;
+}
+.node-25 {
+  width: 9%;
+  top: 68.8%;
+  left: 89%;
+}
+.node-26 {
+  width: 9%;
+  top: 74.2%;
+  left: 82%;
+}
+.node-27 {
+  width: 9%;
+  top: 78%;
+  left: 74%;
+}
+.node-28 {
+  width: 9%;
+  top: 80%;
+  left: 66%;
+}
+.node-29 {
+  width: 9%;
+  top: 81.5%;
+  left: 57.5%;
+}
+.node-30 {
+  width: 8.5%;
+  top: 81%;
+  left: 48%;
+  background: transparent;
+  border: 6px solid #eef1f4;
+  color: transparent;
+}
+.node-31 {
+  width: 9%;
+  top: 79.7%;
+  left: 39.5%;
+}
+.node-32 {
+  width: 9%;
+  top: 77.5%;
+  left: 31.5%;
+}
+.node-33 {
+  width: 9%;
+  top: 73%;
+  left: 24%;
+}
+
+.node-34 {
+  width: 9%;
+  top: 65.6%;
+  left: 19.5%;
+}
+.node-35 {
+  width: 9%;
+  top: 57%;
+  left: 21%;
+}
+.node-36 {
+  width: 9%;
+  top: 51%;
+  left: 27%;
+}
+.node-37 {
+  width: 9%;
+  top: 49%;
+  left: 35.4%;
+}
+.node-38 {
+  width: 9%;
+  top: 51%;
+  left: 44%;
+}
+.node-39 {
+  width: 9%;
+  top: 57%;
+  left: 51.2%;
+}
+
+.node-40 {
+  width: 9%;
+  top: 64.5%;
+  left: 56%;
+}
+.node-41 {
+  width: 9%;
+  top: 73.5%;
+  left: 54%;
+}
+.node-42 {
+  width: 12%;
+  top: 88.5%;
+  left: 40%;
+}
+
+
+
+
+
+/*
+.node.empty {
+    position: relative;
+  background: transparent;
+  border: 6px solid #eef1f4;
+  color: transparent;
+}
+
+/*
+.node .node-wrap {
+  transform: scale(1.38) translateY(-6%) translateX(6%);
+  transform-origin: center;
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* БЛОК 8 — ШАР */
+
+.b8-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  pointer-events: none; }
+
+  .b8 > *:not(video) {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+/* БЛОК 9 — ВЫВЕСКИ */
+
+.b9-item {
+  position: absolute;
+}
+
+.b9-item img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+
+.label-svg {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.item-01 {
+  width: 20%;
+  height: 25%;
+  top: 7%;
+  left: 10%;
+}
+
+.item-01 .arrow {
+  width: 38%;
+  left: -40%;
+  top: 8%;
+  transform: rotate(0deg);
+}
+
+.item-02 {
+  width: 20%;
+  height: 25%;
+  top: 7%;
+  right: 7%;
+}
+
+.item-02 .arrow {
+  width: 38%;
+  left: -35%;
+  top: 27%;
+  transform: rotate(150deg);
+}
+
+.item-03 {
+  width: 25%;
+  height: 25%;
+  top: 25%;
+  left: 5%;
+}
+
+.item-03 .arrow {
+  width: 32%;
+  right: -29%;
+  top: 25%;
+  transform: rotate(0deg);
+}
+
+.item-04 {
+  width: 25%;
+  height: 25%;
+  top: 29%;
+  right: 29%;
+}
+
+.item-04 .arrow {
+  width: 33%;
+  left: -38%;
+  top: 8%;
+  transform: rotate(180deg);
+}
+
+.item-05 {
+  width: 20%;
+  height: 25%;
+  top: 48%;
+  right: 11%;
+}
+
+.item-05 .arrow {
+  width: 38%;
+  left: -40%;
+  top: 10%;
+  transform: rotate(0deg);
+}
+
+.item-06 {
+  width: 20%;
+  height: 25%;
+  top: 66%;
+  left: -5%;
+}
+
+.item-06 .arrow {
+  width: 40%;
+  right: -32%;
+  top: -10%;
+  transform: rotate(-45deg);
+}
+
+.item-07 {
+  width: 28%;
+  height: 25%;
+  top: 66%;
+  right: 20%;
+}
+
+.item-07 .arrow {
+  width: 30%;
+  right: -30%;
+  top: 10%;
+  transform: rotate(0deg);
+}
+
+.item-08 {
+  width: 15%;
+  height: 25%;
+  top: 84%;
+  right: 40%;
+}
+
+.item-08 .arrow {
+  width: 55%;
+  right: -50%;
+  top: 10%;
+  transform: rotate(0deg);
+}
+
+
+/* переменную ввела для стрлки */
+.arrow {
+  --base-rotate: 0deg;
+  transform: rotate(var(--base-rotate));
+}
+
+.arrow {
+  position: absolute;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.b9:hover .arrow {
+  transform: rotate(var(--base-rotate)) scaleX(-1);
+}
+
+
+
+
+
+
+
+/* БЛОК 10 — КОМПАСС */
+
+.b10-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  width: max-content;
+  will-change: transform;
+
+  animation: marquee 14s linear infinite;
+}
+
+.arrow {
+  height: 64px;
+  width: auto;
+  flex-shrink: 0;
+}
+.arrow {
+  height: clamp(40px, 6vw, 72px);
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+/* БЛОК 12 — ПЛАНШЕТИК */
+
+.dots-grid {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.dot-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.6;
+  filter: blur(0.5px);
+
+  animation: activateDot 5s ease forwards;
+  animation-play-state: paused;
+}
+
+
+@keyframes activateDot {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    filter: blur(0.5px);
+  }
+
+  10% {
+    transform: scale(15);
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  70% {
+    transform: scale(30);
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+    filter: blur(0.5px);
+  }
+}
+
+
+.dot-cell:hover .dot {
+  animation-play-state: running;
+}
+
+
+
+
+
+
+
+
+/* БЛОК 13 — ИМЯ ГРУППА */
+
+.b13-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;              /* расстояние между текстами */
+  padding: 0 24px;        /* отступы от краёв плашки */
+}
+.b13 span {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* МЯЧИК DVD 
+.box{
+  background-color: #E7EBF2;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ball {
+  display: block;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #000000;
+  position: absolute;
+  -webkit-animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+
+.text {
+  color: white;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.0; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  margin: 0;
+  padding: 0;
+}
+@-webkit-keyframes moveX {
+  from { left: 0; } to { left: 3px; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 400px; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 400px; }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: 370px; }
+}
+
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: 200px; }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: 200px; }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: 200px; }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: 170px; }
+}
+  */

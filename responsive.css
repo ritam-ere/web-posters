@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; 
+}
+
+.block {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* iPad Portrait */
+@media screen and (max-width: 1024px) {
+  .grid {
+  grid-template-columns: repeat(2, 1fr);
+  }
+
+  .b1  { order: 1; }
+  .b2  { order: 2; }
+
+  .b3  { order: 3; }
+  .b4  { order: 4; }
+
+  .b6  { order: 5; grid-column: span 2; }
+
+  .b5  { order: 6; min-height: 600px; }
+  .b7  { order: 7; min-height: 600px; }
+
+  .b9  { order: 8; min-height: 200px; grid-column: span 2; }
+
+  .b8  { order: 9; }
+  .b10 { order: 10; }
+
+  .b11 { order: 11; grid-column: span 2; }
+
+  .b12 { order: 12; grid-column: span 2; }
+
+  .b13 { order: 13; grid-column: span 2; }
+
+   .lettering {
+    transform: scale(1.08); }
+    .b1 .lettering { /* pe */
+    object-position: center 55%; }
+    .b2 .lettering { /* com */
+    object-position: center 55%; }
+    .b4 .lettering-wrap { transform: scale(0.93); }
+
+    .b9 {
+      aspect-ratio: 2.2 / 1 ;
+      background-color: white;
+    }
+}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .block {
+    grid-column: span 1;
+  }
+}
+
